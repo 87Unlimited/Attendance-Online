@@ -1,0 +1,131 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Attendance Online</title>
+
+    <script src="https://kit.fontawesome.com/f37b347bb3.js" crossorigin="anonymous"></script>
+   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+   <script type="text/javascript" language="javascript">
+        $(document).ready(function(){
+            $('#createClass').click(function(){
+                $('#formClass').show();
+                $('#createClass').hide();
+            });
+
+            $('#add').click(function(){
+                $('#addStudent').show();
+                $('#add').hide();
+            });
+
+            $('#createClass-btn').click(function(){
+                if (confirm('Are you sure to create class?')) {
+                    $('#content1').append('<h2>Class '+$('input[name="className"]').val()+'</h2><table id="content-table"><thead><tr><th>User Name</th><th>User ID</th><th>Class</th></tr></thead><tbody class="class'+$('input[name="className"]').val()+'"></tbody></table>')
+                } else {
+
+                }
+		    });
+
+            $('#addStu-btn').click(function(){
+                if (confirm('Are you sure to add student?')) {
+                    $('#content-table tbody.class'+$('input[name="className1"]').val()).append('<tr><td>'+$('input[name="userName"]').val()+'</td><td>'+$('input[name="userID"]').val()+'</td><td>'+$('input[name="className1"]').val()+'</td></tr>');
+                } else {
+
+                }
+		    });
+        });
+   </script>
+
+   <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <hearder class="header">
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <div class="title">
+                    <a href="teacher.html">Attendance Online</a>
+                </div>
+    
+                <nav class="nav">
+                    <ul>
+                        <li><a href="search.html">Search</a></li>
+                        <li><a href="class.html">Class</a></li>
+                        <li><a href="attend.html">Attendance</a></li>
+                        <li><a href="calendar.html">Calendar</a></li>
+                        <li><a href="account.html"><i class="fas fa-user-circle"></i>Account</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+<section class="class-main">
+    <div class="class-container">
+        <div class="align-items-left">
+            <div class="content">
+                <div id="content1">
+                    <h1>Class allocation</h1>
+                    <hr>
+                    <h2>Class 1B</h2>
+                    <table id="content-table">
+                        <thead>
+                            <tr>
+                                <th>User Name</th>
+                                <th>User ID</th>
+                                <th>Class</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Chun Jai</td>
+                                <td>001</td>
+                                <td>1B</td>
+                            </tr>
+                            <tr>
+                                <td>123</td>
+                                <td>002</td>
+                                <td>1B</td>
+                            </tr>
+                            <tr>
+                                <td>321</td>
+                                <td>003</td>
+                                <td>1B</td>
+                            </tr>
+                            <tr>
+                                <td>456</td>
+                                <td>004</td>
+                                <td>1B</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <input type="button" id="createClass" value="Create Class">
+                <form id="formClass">
+                    <h1>Create Class</h1>
+                    <hr>
+                    <h2>Class</h2>
+                    <input type="text" name="className">
+                    <input type="button" id="createClass-btn" value="Create Class">
+                </form>
+
+                <input type="button" id="add" value="Add Student">
+
+                <form id="addStudent">
+                    <h1>Add Student</h1>
+                    <hr>
+                    <h2>Class</h2>
+                    <input type="text" name="className1">
+                    <h2>User Name</h2>
+                    <input type="text" name="userName">
+                    <h2>User ID</h2>
+                    <input type="text" name="userID">
+                    <input type="button" id="addStu-btn" value="Add Student">
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

@@ -1,0 +1,341 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Attendance Online</title>
+
+   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+   <script src="https://kit.fontawesome.com/f37b347bb3.js" crossorigin="anonymous"></script>
+   <script type="text/javascript" language="javascript">
+        $(document).ready(function(){
+            var numli =  $(".calendar-events.11 li").length;
+            $('.act-num1').append(numli+' Activities');
+            $('.add-activity').hide();
+            $('.back-btn').hide();
+            $('.calendar-events.3').hide();
+            $('.calendar-events.9').hide();
+            $('.calendar-events.27').hide();
+            $('.calendar-btn').click(function(){
+                $('.calendar').hide();
+                $('.calendar-btn').hide();
+                $('.back-btn').show();
+                $('.add-activity').show();
+            });
+            $('.back-btn').click(function(){
+                $('.back-btn').hide();
+                $('.add-activity').hide();
+                $('.calendar').show();
+                $('.calendar-btn').show();
+            });
+            
+            $('.calendar-date').click(function(){
+                var date = $(this).text();
+                if((date=="5")||(date=="12")||(date=="19")||(date=="26")){
+                    var week = "Sunday";
+                }else if((date=="6")||(date=="13")||(date=="20")||(date=="27")){
+                    var week = "Monday";
+                }else if((date=="7")||(date=="14")||(date=="21")||(date=="28")){
+                    var week = "Tuesday";
+                }else if((date=="1")||(date=="8")||(date=="15")||(date=="22")||(date=="29")){
+                    var week = "Wednesday";
+                }else if((date=="2")||(date=="9")||(date=="16")||(date=="23")||(date=="30")){
+                    var week = "Thursday";
+                }else if((date=="3")||(date=="10")||(date=="17")||(date=="24")){
+                    var week = "Friday";
+                }else if((date=="4")||(date=="11")||(date=="18")||(date=="25")){
+                    var week = "Saturday";
+                }
+                $( ".weekday" ).remove();
+                $( ".days" ).remove();
+                $( ".act-num1" ).remove();
+                $('.bigDay').append('<div class="days">'+date+'</div>');
+                $('.bidWeekday').append('<div class="weekday">'+week+'</div>');
+                $('.calendar-events').hide();
+                $('.calendar-events.'+date).show();
+                var length =  $(".calendar-events."+date+" li").length;
+                $('.act-num').append('<div class="act-num1">'+length+' Activities</div>');
+            });
+
+            $('#add-activity-btn').click(function(){
+                if (confirm('Make sure the data is entered correctly?')) {
+                    var date = $('.days').text();
+                    var time = $('#time').val();
+                    var subject = $('#subject').val();
+                    var ampm = $('select[name="ampm"]').val();
+                    var classs = $('select[name="class"]').val();
+                    var length =  $(".calendar-events."+date+" li").length;
+
+                    $( ".act-num1" ).remove();
+                    $( ".event."+date ).remove();
+                    $('.event911').remove();
+                    if(length==0){
+                        $('.calendar-events-container').append('<ul class="calendar-events '+date+'"></ul>');
+                        $('.calendar-events.'+date).append('<li><p><strong>'+time+' '+ampm+'</strong><br/>Class '+classs+' '+subject+'</p></li>');
+                    }else{
+                        $('.calendar-events.'+date).append('<li><p><strong>'+time+' '+ampm+'</strong><br/>Class '+classs+' '+subject+'</p></li>');
+                    }
+
+                    length =  $(".calendar-events."+date+" li").length;
+                    $('.act-num').append('<div class="act-num1">'+length+' Activities</div>');
+                    //$('.event911').append('<div class="911">'+length+'</div>');
+                    $('.calendar-day.'+date).append('<div class="bigEvent '+date+'"><span class="event '+date+'"><div class="eventNum">'+length+'</div></span></div>');
+
+                    $('.back-btn').hide();
+                    $('.add-activity').hide();
+
+                    $('.calendar').show();
+                    $('.calendar-btn').show();
+                } else {
+
+                }
+            });
+        });
+   </script>
+
+   <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <hearder class="header">
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <div class="title">
+                    <a href="student.html">Attendance Online</a>
+                </div>
+    
+                <nav class="nav">
+                    <ul>
+                        <li><a href="class.html">Class</a></li>
+                        <li><a href="search.html">Search</a></li>
+                        <li><a href="calendar.html">Calendar</a></li>
+                        <li><a href="upload.html"><i class="fas fa-file-upload"></i>Upload</a></li>
+                        <li><a href="account.html"><i class="fas fa-user-circle"></i>Account</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+<section class="calendar-main">
+    <div class="calendar-container">
+        <div class="align-items-left">
+            <div class="calendar-left">
+                <div class="calendar-left-content">
+                    <h1><div class="bigDay"><div class="days">11</div></div>September, <div class="bidWeekday"><div class="weekday">Saturday</div></div></h1>
+                    <h3 class="act-num"><div class="act-num1"></div></h3>
+                    <div class="calendar-events-container">
+                        <ul class="calendar-events 3">
+                            <li>
+                                <p><strong>09:00 AM</strong><br/>
+                                English</p>
+                            </li>
+                            <li>
+                                <p><strong>12:00 AM</strong><br/>
+                                Chinese</p>
+                            </li>
+                            <li>
+                                <p><strong>15:00 PM</strong><br/>
+                                Math</p>
+                            </li>
+                        </ul>
+                        <ul class="calendar-events 9">
+                            <li>
+                                <p><strong>8:00 AM</strong><br/>
+                                English</p>
+                            </li>
+                            <li>
+                                <p><strong>10:00 AM</strong><br/>
+                                    English</p>
+                            </li>
+                        </ul>
+                        <ul class="calendar-events 11">
+                            <li>
+                                <p><strong>8:00 AM</strong><br/>
+                                Chinese</p>
+                            </li>
+                            <li>
+                                <p><strong>10:00 AM</strong><br/>
+                                English</p>
+                            </li>
+                            <li>
+                                <p><strong>12:00 AM</strong><br/>
+                                English</p>
+                            </li>
+                            <li>
+                                <p><strong>17:00 AM</strong><br/>
+                                Math</p>
+                            </li>
+                        </ul>
+                        <ul class="calendar-events 27">
+                            <li>
+                                <p><strong>8:00 AM</strong><br/>
+                                Math</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="calendar-right">
+                <div class="calendar-right-content">
+                    <div class="calendar">
+                        <h2>September 2021</h2>
+                        <br>
+                        <section class="calendar-row">
+                            <div class="calendar-day day-name">Sun</div>
+                            <div class="calendar-day day-name">Mon</div>
+                            <div class="calendar-day day-name">Tue</div>
+                            <div class="calendar-day day-name">Wed</div>
+                            <div class="calendar-day day-name">Thu</div>
+                            <div class="calendar-day day-name">Fri</div>
+                            <div class="calendar-day day-name">Sat</div>
+                        </section>
+                        <section class="calendar-row">
+                            <div class="calendar-day inactive weekend sun">
+                                <span class="calendar-date">29</span>
+                            </div>
+                            <div class="calendar-day inactive mon">
+                                <span class="calendar-date">30</span>
+                            </div>
+                            <div class="calendar-day inactive tue">
+                                <span class="calendar-date">31</span>
+                            </div>
+                            <div class="calendar-day 1 wed">
+                                <span class="calendar-date">1</span>
+                            </div>
+                            <div class="calendar-day 2 thu">
+                                <span class="calendar-date">2</span>
+                            </div>
+                            <div class="calendar-day 3 fri">
+                                <span class="calendar-date">3</span>
+                                <br/><span class="event 6">3</span>
+                            </div>
+                            <div class="calendar-day 4 weekend sat">
+                                <span class="calendar-date">4</span>
+                            </div>
+                        </section>
+                        <section class="calendar-row">
+                            <div class="calendar-day 5 weekend special sun">
+                                <span class="calendar-date">5</span>
+                            </div>
+                            <div class="calendar-day 6 mon">
+                                <span class="calendar-date 6">6</span>
+                            </div>
+                            <div class="calendar-day 7 tue">
+                                <span class="calendar-date">7</span>
+                            </div>
+                            <div class="calendar-day 8 wed">
+                                <span class="calendar-date">8</span>
+                            </div>
+                            <div class="calendar-day 9 thu">
+                                <span class="calendar-date">9</span>
+                                <br/><span class="event 6">2</span>
+                            </div>
+                            <div class="calendar-day 10 fri">
+                                <span class="calendar-date">10</span>
+                            </div>
+                            <div class="calendar-day 11 weekend sat">
+                                <span class="calendar-date 11">11</span>
+                                <br/><span class="event 11">9</span>
+                            </div>
+                        </section>
+                        <section class="calendar-row">
+                            <div class="calendar-day 12 weekend special sun">
+                                <span class="calendar-date">12</span>
+                            </div>
+                            <div class="calendar-day 13 mon">
+                                <span class="calendar-date 13">13</span>
+                            </div>
+                            <div class="calendar-day 14 tue">
+                                <span class="calendar-date">14</span>
+                            </div>
+                            <div class="calendar-day 15 wed">
+                                <span class="calendar-date">15</span>
+                            </div>
+                            <div class="calendar-day 16 thu">
+                                <span class="calendar-date">16</span>
+                            </div>
+                            <div class="calendar-day 17 fri">
+                                <span class="calendar-date">17</span>
+                            </div>
+                            <div class="calendar-day 18 weekend sat">
+                                <span class="calendar-date">18</span>
+                            </div>
+                        </section>
+                        <section class="calendar-row">
+                            <div class="calendar-day 19 weekend special sun">
+                                <span class="calendar-date">19</span>
+                            </div>
+                            <div class="calendar-day 20 mon">
+                                <span class="calendar-date">20</span>
+                            </div>
+                            <div class="calendar-day 21 special tue">
+                                <span class="calendar-date">21</span>
+                            </div>
+                            <div class="calendar-day 22 wed">
+                                <span class="calendar-date">22</span>
+                            </div>
+                            <div class="calendar-day 23 thu">
+                                <span class="calendar-date">23</span>
+                            </div>
+                            <div class="calendar-day 24 fri">
+                                <span class="calendar-date">24</span>
+                            </div>
+                            <div class="calendar-day 25 weekend sat">
+                                <span class="calendar-date">25</span>
+                            </div>
+                        </section>
+                        <section class="calendar-row">
+                            <div class="calendar-day 26 weekend special sun">
+                                <span class="calendar-date">26</span>
+                            </div>
+                            <div class="calendar-day 27 mon">
+                                <span class="calendar-date">27</span>
+                                <br/><span class="event 30">1</span>
+                            </div>
+                            <div class="calendar-day 28 tue">
+                                <span class="calendar-date">28</span>
+                            </div>
+                            <div class="calendar-day 29 wed">
+                                <span class="calendar-date">29</span>
+                            </div>
+                            <div class="calendar-day 30 thu">
+                                <span class="calendar-date 30">30</span>
+                            </div>
+                            <div class="calendar-day inactive fri">
+                                <span class="calendar-date">1</span>
+                            </div>
+                            <div class="calendar-day inactive weekend sat">
+                                <span class="calendar-date">2</span>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+
+                <div class="calendar-right-content">
+                    <form class="add-activity">
+                        <h2>Add activity</h2>
+                        <hr>
+                        <h3>Time</h3>
+                        <input type="time" id="time" min="00:00" max="23:59" value="00:00">
+                        <h3>Subject</h3>
+                        <input type="text" id="subject">
+                        <h3>AM/PM</h3>
+                        <select name="ampm">
+                            <option value="AM">AM</option>
+                            <option value="PM">PM</option>
+                        </select>
+                        <h3>Class</h3>
+                        <select name="class">
+                            <option value="1A">1A</option>
+                            <option value="1B">1B</option>
+                            <option value="2D">2D</option>
+                        </select>
+                        <input type="button" id="add-activity-btn" value="Add activity">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

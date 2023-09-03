@@ -1,0 +1,240 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Attendance Online</title>
+
+    <script src="https://kit.fontawesome.com/f37b347bb3.js" crossorigin="anonymous"></script>
+   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+   <script type="text/javascript">
+        $(document).ready(function(){
+            $("#class").keyup(function(){
+			    $('#content-table tbody tr').hide().filter(":contains('"+$(this).val()+"')").show();
+		    });
+
+		    $('#gen').click(function(){
+                if (confirm('Make sure the data is entered correctly?')) {
+                    $('#content-table tbody.class'+$('select[name="class"]').val()).append('<tr><td>'+'007'+'</td>'+'<td>'+$('input[name="userID"]').val()+'</td>'+'<td>'+$('input[name="userName"]').val()+'</td>'+'<td>'+$('select[name="class"]').val()+'</td>'+'<td>'+$('select[name="statusName"]').val()+'</td>'+'<td>'+$('input[name="recordDate"]').val()+'</td>'+'<td>'+$('input[name="recordTime"]').val()+'</td></tr>');
+                } else {
+
+                }
+		    });
+
+            $('#showGen').click(function(){
+                $('#generate').show();
+                $('#showGen').hide();
+            });
+	    });
+   </script>
+
+   <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<hearder class="header">
+    <div class="container">
+        <div class="row justify-content-between align-items-center">
+            <div class="title">
+                <a href="teacher.html">Attendance Online</a>
+            </div>
+
+            <nav class="nav">
+                <ul>
+                    <li><a href="search.html">Search</a></li>
+                    <li><a href="class.html">Class</a></li>
+                    <li><a href="attend.html">Attendance</a></li>
+                    <li><a href="calendar.html">Calendar</a></li>
+                    <li><a href="account.html"><i class="fas fa-user-circle"></i>Account</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<section class="search-main">
+    <div class="search-container">
+        <div class="align-items-left">
+            <div class="content">
+                <h1>Attendance Record Searching</h1>
+                <hr>
+                <br>
+                <p><i>You belong to class: 1B, 1C</i></p>
+                <input type="text" id="class" placeholder="Enter student's class, ID or name">
+                <h2>Class 1A</h2>
+                <hr>
+                <table id="content-table">
+                    <thead>
+                        <tr>
+                            <th>Record ID</th>
+                            <th>User ID</th>
+                            <th>User Name</th>
+                            <th>Class</th>
+                            <th>Status Name</th>
+                            <th>Record Date</th>
+                            <th>Record Time</th>
+                        </tr>
+                    </thead>
+
+                    <tbody class="class1A">
+                        <tr>
+                            <td>001</td>
+                            <td>001</td>
+                            <td>Chun Jai</td>
+                            <td>1A</td>
+                            <td>Present</td>
+                            <td>2099-01-01</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>002</td>
+                            <td>002</td>
+                            <td>So Jai</td>
+                            <td>1A</td>
+                            <td>Present</td>
+                            <td>2229-01-01</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>003</td>
+                            <td>003</td>
+                            <td>TungTung</td>
+                            <td>1A</td>
+                            <td>Early leave</td>
+                            <td>2199-01-01</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>004</td>
+                            <td>004</td>
+                            <td>TT</td>
+                            <td>1A</td>
+                            <td>Present</td>
+                            <td>2099-04-01</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>005</td>
+                            <td>005</td>
+                            <td>NBSL</td>
+                            <td>1A</td>
+                            <td>Sick Leave</td>
+                            <td>2021-10-14</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>006</td>
+                            <td>006</td>
+                            <td>Wong Wong Wong</td>
+                            <td>1A</td>
+                            <td>Personal leave</td>
+                            <td>2011-01-01</td>
+                            <td>00:00</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h2>Class 1B</h2>
+                <hr>
+                <table id="content-table">
+                    <thead>
+                        <tr>
+                            <th>Record ID</th>
+                            <th>User ID</th>
+                            <th>User Name</th>
+                            <th>Class</th>
+                            <th>Status Name</th>
+                            <th>Record Date</th>
+                            <th>Record Time</th>
+                        </tr>
+                    </thead>
+
+                    <tbody class="class1B">
+                        <tr>
+                            <td>001</td>
+                            <td>001</td>
+                            <td>Chun Jai</td>
+                            <td>1B</td>
+                            <td>Present</td>
+                            <td>2099-01-01</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>002</td>
+                            <td>002</td>
+                            <td>So Jai</td>
+                            <td>1B</td>
+                            <td>Present</td>
+                            <td>2229-01-01</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>003</td>
+                            <td>003</td>
+                            <td>TungTung</td>
+                            <td>1B</td>
+                            <td>Early leave</td>
+                            <td>2199-01-01</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>004</td>
+                            <td>004</td>
+                            <td>TT</td>
+                            <td>1B</td>
+                            <td>Present</td>
+                            <td>2099-04-01</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>005</td>
+                            <td>005</td>
+                            <td>NBSL</td>
+                            <td>1B</td>
+                            <td>Sick Leave</td>
+                            <td>2021-10-14</td>
+                            <td>00:00</td>
+                        </tr>
+                        <tr>
+                            <td>006</td>
+                            <td>006</td>
+                            <td>CHI JAI</td>
+                            <td>1B</td>
+                            <td>Personal leave</td>
+                            <td>2011-01-01</td>
+                            <td>00:00</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <input type="button" id="showGen" value="Generate Report">
+
+                <form id="generate">
+                    <h1>Attendance Record Generating</h1>
+                    <hr>
+                    <h2>User ID</h2>
+                    <input type="text" name="userID">
+                    <h2>User Name</h2>
+                    <input type="text" name="userName">
+                    <h2>Class</h2>
+                    <select name="class">
+    	                <option value="1A">1A</option>
+                        <option value="1B">1B</option>
+                    </select>
+                    <h2>Status Name</h2>
+                    <select name="statusName">
+    	                <option value="Present">Present</option>
+                        <option value="Late">Late</option>
+                        <option value="Early leave">Early leave</option>
+                        <option value="Sick Leave">Sick Leave</option>
+                        <option value="Absent without reason">Absent without reason</option>
+                    </select>
+                    <h2>Record Date</h2>
+                    <input type="date" name="recordDate" min="2018-01-01" max="2021-10-14" value="2021-10-14">
+                    <h2>Record Time</h2>
+                    <input type="time" name="recordTime" min="00:00" max="23:59" value="00:00">
+                    <input type="button" id="gen" value="Generate Report">
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

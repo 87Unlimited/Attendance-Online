@@ -1,0 +1,257 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Attendance Management</title>
+
+	<script src="https://kit.fontawesome.com/f37b347bb3.js" crossorigin="anonymous"></script>
+   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+   <script type="text/javascript">
+
+        $(document).ready(function(){
+    		$("#allStatus").change(function(){
+		status = $(this).val();
+		$(".status").val(status);
+		var time = new Date(); 
+		var now = time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
+		 $(".time").html(now);
+		});
+
+		$(".status").change(function(){
+		var currentRow = $(this).closest("tr");
+		var col2 = currentRow.find("td:eq(2)");
+		var time = new Date(); 
+		var now = time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
+ 		$(col2).html(now);
+		});
+		
+		$(".1 .certificate-btn").click(function(){
+			var col3 = $('.1 .status').find(":selected").text();
+			if(col3 == "Sick Leave"){
+				window.open("sick.html");
+			}else if(col3 == "Personal Leave"){
+				window.open("personalleave.html");
+			}else if(col3 == "Absent without reason"){
+				alert("Did not have recrod yet");
+			}else{alert("Status are not Sick Leave/Personal Leave!");}
+		});
+		$(".2 .certificate-btn").click(function(){
+			var col3 = $('.2 .status').find(":selected").text();
+			if(col3 == "Sick Leave"){
+				window.open("sick.html");
+			}else if(col3 == "Personal Leave"){
+				window.open("personalleave.html");
+			}else if(col3 == "Absent without reason"){
+				alert("Did not have recrod yet");
+			}else{alert("Status are not Sick Leave/Personal Leave!");}
+		});
+		$(".3 .certificate-btn").click(function(){
+			var col3 = $('.3 .status').find(":selected").text();
+			if(col3 == "Sick Leave"){
+				window.open("sick.html");
+			}else if(col3 == "Personal Leave"){
+				window.open("personalleave.html");
+			}else if(col3 == "Absent without reason"){
+				alert("Did not have recrod yet");
+			}else{alert("Status are not Sick Leave/Personal Leave!");}
+		});
+		$(".4 .certificate-btn").click(function(){
+			var col3 = $('.4 .status').find(":selected").text();
+			if(col3 == "Sick Leave"){
+				window.open("sick.html");
+			}else if(col3 == "Personal Leave"){
+				window.open("personalleave.html");
+			}else if(col3 == "Absent without reason"){
+				alert("Did not have recrod yet");
+			}else{alert("Status are not Sick Leave/Personal Leave!");}
+		});
+		$(".5 .certificate-btn").click(function(){
+			var txt;
+			var col3 = $('.5 .status').find(":selected").text();
+			if(col3 == "Sick Leave"){
+				window.open("sick.html");
+			}else if(col3 == "Personal Leave"){
+				window.open("personalleave.html");
+			}else if(col3 == "Absent without reason"){
+				alert("Did not have recrod yet");
+			}else{alert("nothStatus are not Sick Leave/Personal Leave!ing");}
+		});
+		$(".6 .certificate-btn").click(function(){
+			var col3 = $('.6 .status').find(":selected").text();
+			if(col3 == "Sick Leave"){
+				window.open("sick.html");
+			}else if(col3 == "Personal Leave"){
+				window.open("personalleave.html");
+			}else if(col3 == "Absent without reason"){
+				alert("Did not have recrod yet");
+			}else{alert("Status are not Sick Leave/Personal Leave!");}
+		});
+
+	    });
+
+
+   </script>
+
+   <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+	<hearder class="header">
+		<div class="container">
+			<div class="row justify-content-between align-items-center">
+				<div class="title">
+					<a href="teacher.html">Attendance Online</a>
+				</div>
+	
+				<nav class="nav">
+					<ul>
+						<li><a href="search.html">Search</a></li>
+						<li><a href="class.html">Class</a></li>
+						<li><a href="attend.html">Attendance</a></li>
+						<li><a href="calendar.html">Calendar</a></li>
+						<li><a href="account.html"><i class="fas fa-user-circle"></i>Account</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+
+<section class="search-main">
+    <div class="search-container">
+        <div class="align-items-left">
+            <div class="content">
+                <h1>Attendance Management</h1>
+                <hr>
+                <br>
+				<h4>All student status <select id="allStatus"><option disabled selected value></option>
+					<option value="present">Present</option>
+					<option value="late">Late</option></select>
+				</h4>
+                <hr>
+                <table id="content-table">
+                    <thead id="attend">
+                        <tr>
+                            <th>ID</th>
+                            <th> Name</th>
+                            <th >Record Time</th>
+                            <th>Status</th>
+	        				<th>Check certificate</th>
+                        </tr>
+                    </thead>
+
+                    <tbody class="class1A">
+                        <tr class="1">
+                            <td>001</td>
+                            <td>TT</td>
+                            <td class="time">Not record yet</td>
+                            <td>
+								<select class="status">
+								<option disabled selected value></option>
+								<option value="present">Present</option>
+								<option value="late">Late</option>
+								<option value="earlyLeave">Early Leave</option>
+								<option value="sickLeave">Sick Leave</option>
+								<option value="personalLeave">Personal Leave</option>
+								<option value="absOutReason">Absent without reason</option>
+		               			</select>
+							</td>
+	        				<td><input type="button" class="certificate-btn" value="✎"></button></td>
+                        </tr>
+
+                        <tr class="2">
+                            <td>002</td>
+                            <td>TT2</td>
+                            <td class="time">Not record yet</td>
+                            <td>
+								<select class="status" >
+								<option disabled selected value></option>
+								<option value="present">Present</option>
+								<option value="late">Late</option>
+								<option value="earlyLeave">Early Leave</option>
+								<option value="sickLeave">Sick Leave</option>
+								<option value="personalLeave">Personal Leave</option>
+								<option value="absOutReason">Absent without reason</option>
+		               			</select>
+							</td>
+	       					 <td><input type="button" class="certificate-btn" value="✎"></button></td>
+                        </tr>
+
+                        <tr class="3">
+                            <td>003</td>
+                            <td>TungTung</td>
+                            <td class="time">Not record yet</td>
+                            <td>
+								<select class="status">
+								<option disabled selected value></option>
+								<option value="present">Present</option>
+								<option value="late">Late</option>
+								<option value="earlyLeave">Early Leave</option>
+								<option value="sickLeave">Sick Leave</option>
+								<option value="personalLeave">Personal Leave</option>
+								<option value="absOutReason">Absent without reason</option>
+		               			</select>
+							</td>
+	        				<td><input type="button" class="certificate-btn" value="✎"></button></td>
+
+                        </tr>
+                        <tr class="4">
+                            <td>004</td>
+                            <td>TT</td>
+                            <td class="time">Not record yet</td>
+                            <td>
+								<select class="status" >
+								<option disabled selected value></option>
+								<option value="present">Present</option>
+								<option value="late">Late</option>
+								<option value="earlyLeave">Early Leave</option>
+								<option value="sickLeave">Sick Leave</option>
+								<option value="personalLeave">Personal Leave</option>
+								<option value="absOutReason">Absent without reason</option>
+		               			</select>
+							</td>
+	        				<td><input type="button" class="certificate-btn" value="✎"></button></td>
+                        </tr>
+
+                        <tr class="5">
+                            <td>005</td>
+                            <td>TT</td>
+                            <td class="time">Not record yet</td>
+                            <td>
+								<select class="status" >
+								<option disabled selected value></option>
+								<option value="present">Present</option>
+								<option value="late">Late</option>
+								<option value="earlyLeave">Early Leave</option>
+								<option value="sickLeave">Sick Leave</option>
+								<option value="personalLeave">Personal Leave</option>
+								<option value="absOutReason">Absent without reason</option>
+		               			</select>
+							</td>
+	        				<td><input type="button" class="certificate-btn" value="✎"></button></td>
+
+                        </tr>
+                        <tr class="6">
+                            <td>006</td>
+                            <td>TT</td>
+                            <td class="time">Not record yet</td>
+                            <td>
+								<select class="status" >
+								<option disabled selected value></option>
+								<option value="present">Present</option>
+								<option value="late">Late</option>
+								<option value="earlyLeave">Early Leave</option>
+								<option value="sickLeave">Sick Leave</option>
+								<option value="personalLeave">Personal Leave</option>
+								<option value="absOutReason">Absent without reason</option>
+		               			</select>
+							</td>
+	        				<td><input type="button" class="btcertificate-btn" value="✎"></button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

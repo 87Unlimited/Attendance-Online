@@ -1,0 +1,1252 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Capriola&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+body{
+    margin: 0;
+    line-height: 1.5;
+    font-family: 'Poppins';
+    font-weight: 400;
+}
+
+*{
+    font-family: 'Poppins';
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    max-width: 1170px;
+    margin: auto;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.align-items-center{
+    align-items: center;
+}
+
+.justify-content-between{
+    justify-content: space-between;
+}
+
+.header{
+    position:absolute;
+    Left:0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    background-color: #4d4d4d;
+}
+
+.header .title{
+    padding: 0 15px;
+}
+
+.header .title a{
+    font-family: 'Capriola', sans-serif;
+    font-size: 30px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    transition: all 0.5s ease;
+}
+
+.header .title a:hover{
+    color: #ff6699;
+}
+
+.header .nav{
+    /*background-color: #473bf0;*/
+    padding: 0 15px;
+}
+
+.header .nav ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header .nav ul li{
+    display: inline-block;
+    margin-Left: 30px;
+}
+
+.header .nav ul li a{
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 400;
+    color: #ffffff;
+    padding: 25px 0;
+    display: block;
+    transition: all 0.7s ease;
+}
+
+.header .nav ul li a:hover{
+    color: #ff6699;
+}
+
+.main{
+    min-height: 100vh;
+    background-color: #cccccc;
+    background-size: cover;
+    background-position: center;
+    position:relative;
+}
+
+.main .row{
+    min-height: 75vh;
+}
+
+.main .content{
+    flex:0 0 100%;
+    max-width: 100%;
+    text-align: center;
+}
+
+.main .content h1{
+    font-size: 60px;
+    margin:0;
+    color:#ff77aa;
+    font-weight: 1100;
+}
+
+.main .content a{
+    position: relative;
+    display: inline-block;
+    padding: 12px 36px;
+    margin: 10px 0;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 2px;
+    border-radius: 40px;
+    transition: all 0.7s ease;
+}
+
+.main .content a:hover{
+    transform: translate(0px, 0px);
+    color:#ff77aa;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.main .content a:hover::after{
+    transform: rotate(150deg);
+}
+
+/*------------------------Login------------------------*/
+
+.main .login-container{
+    position:absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 320px;
+    height: 420px;
+    margin: auto;
+    background-color: #4d4d4d;
+    border: 0;
+    border-radius: 30px;
+}
+
+.main .login-container .row{
+    min-height: 75vh;
+}
+
+.main .login-container .content{
+    flex:0 0 100%;
+    max-width: 100%;
+    text-align: center;
+}
+
+.login-container p.title{
+    font-weight: bold;
+    color: #cccccc;
+    text-align: left;
+    margin-left: 16px;
+}
+
+.login-container h2{
+    text-align: left;
+    margin-left: 30px;
+    color: #ffffff;
+}
+
+.login-container input{
+    width: 80%;
+    margin-bottom: 30px;
+}
+
+.login-container input[type="text"], .login-container input[type="Password"]{
+    color: #ffffff;
+    border: none;
+    border-bottom: 1px solid #cccccc;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    width: 80%;
+}
+
+.login-container input[type="submit"]{
+    border: 0;
+    border-radius: 30px;
+    padding: 16px 30px;
+    cursor: pointer;
+    color: #ff6699;
+    transition: all 0.3s linear;
+}
+
+.login-container input[type="submit"]:hover{
+    background-color: #ff6699;
+    color: #ffffff;
+}
+
+.login-container #showTeacher, .login-container #showAdmin, .login-container #showStudent{
+    font-weight: 400;
+    font-size: 12px;
+    padding: 15px;
+    margin-bottom: -35px;
+    color: #cccccc;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-container #showTeacher, .login-container .admin1{
+    margin-top: -35px;
+}
+
+.login-container #showTeacher:hover, .login-container #showAdmin:hover, .login-container #showStudent:hover{
+    color: #ff6699;
+}
+
+/*------------------------Index------------------------*/
+
+.main .index-content{
+    flex:0 0 100%;
+    max-width: 100%;
+    text-align: center;
+}
+
+.index-container {
+    position: relative;
+    width: 1600px;
+    height: 300px;
+    margin: 240px -207px;
+}
+
+.index-container .box{
+    position: relative;
+    width: 370px;
+    height: 270px;
+    background: #4d4d4d;
+    float: left;
+    margin: 15px;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.index-container .box .icon{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    transition: 0.5s;
+}
+
+.index-container .box:hover .icon{
+    top: 20px;
+    left: calc(50% - 40px);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.index-container .box .icon .far, .index-container .box .icon .fas, .index-container .box .icon .fas{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 80px;
+    transition: 0.5s;
+    color: #ff6699;
+}
+
+.index-container .box:hover .icon .far, .index-container .box:hover .icon .fas, .index-container .box:hover .icon .fas{
+    font-size: 40px;
+    opacity: 70%
+}
+
+.index-container .box h1{
+    margin-top: 100px;
+    font-size: 35px;
+    color: #ff6699;
+    transition: 0.5s;
+}
+
+.index-container .box h1:hover{
+    color: #ffffff;
+}
+
+.index-container .box hr{
+    max-width: 80%;
+    margin: auto;
+}
+
+.index-container .box p{
+    margin-top: 15px;
+    color: #ffffff;
+}
+
+.index-container .box a{
+    text-decoration: none;
+    color: #ff6699;
+}
+
+/*------------------------Admin-Index------------------------*/
+
+.admin-index-container {
+    position: relative;
+    width: 1600px;
+    height: 300px;
+    margin: 240px auto;
+}
+
+.admin-index-container .box{
+    position: relative;
+    width: 370px;
+    height: 270px;
+    background: #4d4d4d;
+    float: left;
+    margin: 15px;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.admin-index-container .box .icon{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    transition: 0.5s;
+}
+
+.admin-index-container .box:hover .icon{
+    top: 20px;
+    left: calc(50% - 40px);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.admin-index-container .box .icon .far, .admin-index-container .box .icon .fas, .admin-index-container .box .icon .fas{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 80px;
+    transition: 0.5s;
+    color: #ff6699;
+}
+
+.admin-index-container .box:hover .icon .far, .admin-index-container .box:hover .icon .fas, .admin-index-container .box:hover .icon .fas{
+    font-size: 40px;
+    opacity: 70%
+}
+
+.admin-index-container .box h1{
+    margin-top: 100px;
+    font-size: 35px;
+    color: #ff6699;
+    transition: 0.5s;
+}
+
+.admin-index-container .box h1:hover{
+    color: #ffffff;
+}
+
+.admin-index-container .box hr{
+    max-width: 80%;
+    margin: auto;
+}
+
+.admin-index-container .box p{
+    margin-top: 15px;
+    color: #ffffff;
+}
+
+.admin-index-container .box a{
+    text-decoration: none;
+    color: #ff6699;
+}
+
+/*------------------------Account------------------------*/
+
+.ac-main{
+    min-height: 100vh;
+    background-color: #cccccc;
+    background-size: cover;
+    background-position:center;
+    position:relative;
+}
+
+.ac-container{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 550px;
+    height: auto;
+    margin: auto;
+    background-color: #4d4d4d;
+    border: 0;
+    border-radius: 15px;
+}
+
+.ac-container .content{
+    padding: 20px;
+}
+
+.ac-main .ac-container .content h1{
+    font-size: 40px;
+    padding: 15px;
+    color: #ff6699;
+}
+
+.ac-container .content h2{
+    font-size: 25px;
+    font-weight: 400;
+    padding: 15px;
+    color: #ffffff;
+}
+
+.ac-container .content hr{
+    max-width: 100%;
+    margin: auto;
+}
+
+.ac-container .content input[type="text"], .ac-container .content input[type="password"]{
+    padding: 15px;
+    color: #cccccc;
+    border: none;
+    border-bottom: 1px solid #cccccc;
+    background: transparent;
+    outline: none;
+    width: 100%;
+    height: 30px;
+    margin-bottom: 10px;
+    transition: all 0.5s ease;
+}
+
+.ac-container .content input[type="text"]:hover{
+    border-bottom: 1px solid #ff6699;
+}
+
+.ac-container .content input[type="password"]:hover{
+    border-bottom: 1px solid #ff6699;
+}
+
+.ac-container .content #update{
+    width: 100%;
+    border: 0;
+    border-radius: 30px;
+    padding: 16px 30px;
+    cursor: pointer;
+    color: #ff6699;
+    transition: all 0.3s linear;
+    margin-top: 30px;
+}
+
+.ac-container .content #update:hover{
+    color: #ffffff;
+    background-color: #ff6699;
+}
+
+.ac-container a{
+    color: #ffffff;
+    transition: 0.5s;
+    text-decoration: none;
+}
+
+.ac-container a:hover{
+    color: #ff6699;
+}
+
+/*------------------------Search------------------------*/
+
+.search-main{
+    min-height: 300vh;
+    background-color: #cccccc;
+    background-size: cover;
+    background-position:center;
+    position:relative;
+}
+
+.search-container{
+    position:relative;
+    top: 100;
+    left: 0;
+    width: 950px;
+    height: auto;
+    margin: auto;
+    background-color: #4d4d4d;
+    border: 0;
+    border-radius: 15px;
+}
+
+.search-container .content{
+    padding: 20px;
+}
+
+.search-container .content h1{
+    font-size: 40px;
+    padding: 15px;
+    color: #ff6699;
+}
+
+.search-container .content h2{
+    padding: 15px;
+    color: #ffffff;
+}
+
+.search-container .content p{
+    padding: 8px;
+    color: #cccccc;
+}
+
+.search-container .content input[id="condition"]{
+    padding: 15px;
+    color: #cccccc;
+    border: none;
+    border-bottom: 1px solid #cccccc;
+    background: transparent;
+    outline: none;
+    width: 300px;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+.search-container .content a{
+    border: 0;
+    border-radius: 30px;
+    border-width: 100px;
+    text-decoration: none;
+    padding: 10px 364px 16px;
+    cursor: pointer;
+    color: #ff6699;
+    background-color: #FFFFFF;
+    transition: all 0.3s linear;
+    margin-top: 40px;
+}
+
+.search-container .content a:hover{
+    color: #ffffff;
+    background-color: #ff6699;
+}
+
+#content-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    min-width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#content-table thead tr {
+    background-color: #ff77aa;
+    color: #FFFFFF;
+    text-align: left;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#content-table th,
+#content-table td {
+    padding: 12px 15px;
+    font-size: 18px;
+}
+
+#content-table tbody tr {
+    border-bottom: 1px solid #cccccc;
+    background-color: #ffffff;
+}
+
+#content-table tbody tr:hover{
+    color: #ff6699;
+    font-weight: bold;
+}
+
+#content-table tbody tr:nth-of-type(even){
+    border-bottom: 1px solid #cccccc;
+    background-color: #cccccc;
+}
+
+#content-table tbody tr:last-of-type {
+    border-bottom: 2px solid #ff77aa;
+}
+
+.search-container .content input[type="text"], .search-container .content input[type="password"]{
+    padding: 15px;
+    color: #cccccc;
+    border: none;
+    border-bottom: 1px solid #cccccc;
+    background: transparent;
+    outline: none;
+    width: 100%;
+    height: 30px;
+    margin-bottom: 10px;
+    transition: all 0.5s ease;
+}
+
+.search-container .content input[type="text"]:hover{
+    border-bottom: 1px solid #ff6699;
+}
+
+.search-container .content input[type="password"]:hover{
+    border-bottom: 1px solid #ff6699;
+}
+
+.search-container .content h2{
+    font-size: 25px;
+    font-weight: 400;
+    padding: 15px;
+    color: #ffffff;
+}
+
+.search-container .content h3{
+    font-size: 25px;
+    font-weight: 400;
+    padding: 15px;
+    color: #ffffff;
+}
+
+.search-container input[type="button"]{
+    width: 100%;
+    border: 0;
+    border-radius: 30px;
+    margin-top: 10px;
+    padding: 16px 30px;
+    cursor: pointer;
+    color: #ff6699;
+    transition: all 0.3s linear;
+}
+
+.search-container input[type="button"]:hover{
+    background-color: #ff6699;
+    color: #ffffff;
+}
+
+.search-container input[type=date], .search-container input[type=time]{
+    padding: 15px;
+    color: #ffffff;
+    border: none;
+    border-bottom: 1px solid #cccccc;
+    background: transparent;
+    outline: none;
+    width: 100%;
+    height: 30px;
+    margin-bottom: 10px;
+    transition: all 0.5s ease;
+}
+
+.search-container select[name="class"], .search-container select[name="statusName"]{
+    margin-left: 5px;
+    color: #000000;
+    border: none;
+    border-bottom: 1px solid #cccccc;
+    background: transparent;
+    background-color: #fff;
+    outline: none;
+    width: 100px;
+    height: 30px;
+    margin-bottom: 10px;
+    transition: all 0.5s ease;
+}
+
+.search-container #generate{
+    display: none;
+}
+
+.search-container #class{
+    padding: 15px;
+    color: #ff6699;
+    border: none;
+    background: #3a3a3a;
+    outline: none;
+    width: 250px;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+.search-container .content h2{
+    padding: 15px;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.search-container .content h3{
+    padding: 15px;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+/*------------------------ManageAc------------------------*/
+
+.manage-main{
+    min-height: 180vh;
+    background-color: #cccccc;
+    background-size: cover;
+    background-position:center;
+    position:relative;
+}
+
+.manage-container{
+    position:relative;
+    top: 100px;
+    width: 900px;
+    height: auto;
+    margin: auto;
+    background-color: #4d4d4d;
+    border: 0;
+    border-radius: 15px;
+}
+
+.manage-container .content{
+    padding: 20px;
+}
+
+.manage-container .content h1{
+    font-size: 40px;
+    padding: 15px;
+    color: #ff6699;
+}
+
+.manage-container .content h2{
+    padding: 15px;
+    color: #ffffff;
+}
+
+.manage-container .content input[id="condition"]{
+    padding: 15px;
+    color: #cccccc;
+    border: none;
+    border-bottom: 1px solid #cccccc;
+    background: transparent;
+    outline: none;
+    width: 300px;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+.content-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    min-width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.content-table thead tr {
+    background-color: #ff77aa;
+    color: #FFFFFF;
+    text-align: left;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.content-table th,
+.content-table td {
+    padding: 12px 15px;
+    font-size: 18px;
+}
+
+.content-table tbody tr {
+    border-bottom: 1px solid #cccccc;
+    background-color: #ffffff;
+}
+
+.content-table tbody tr:hover{
+    color: #ff6699;
+    font-weight: bold;
+}
+
+.content-table tbody tr:nth-of-type(even){
+    border-bottom: 1px solid #cccccc;
+    background-color: #cccccc;
+}
+
+.content-table tbody tr:last-of-type {
+    border-bottom: 2px solid #ff77aa;
+}
+
+.manage-container .content input[type="text"], .manage-container .content input[type="password"]{
+    padding: 15px;
+    color: #cccccc;
+    border: none;
+    border-bottom: 1px solid #cccccc;
+    background: transparent;
+    outline: none;
+    width: 100%;
+    height: 30px;
+    margin-bottom: 10px;
+    transition: all 0.5s ease;
+}
+
+.manage-container .content input[type="text"]:hover{
+    border-bottom: 1px solid #ff6699;
+}
+
+.manage-container .content input[type="password"]:hover{
+    border-bottom: 1px solid #ff6699;
+}
+
+.manage-container .content h2{
+    font-size: 25px;
+    font-weight: 400;
+    padding: 15px;
+    color: #ffffff;
+}
+
+.manage-container .content h3{
+    font-size: 25px;
+    font-weight: 400;
+    padding: 15px;
+    color: #ffffff;
+}
+
+.manage-container input[type=date], .manage-container input[type=time]{
+    padding: 15px;
+    color: #ffffff;
+    border: none;
+    border-bottom: 1px solid #cccccc;
+    background: transparent;
+    outline: none;
+    width: 100%;
+    height: 30px;
+    margin-bottom: 10px;
+    transition: all 0.5s ease;
+}
+
+.manage-container select[name="class"], .manage-container select[name="statusName"], .manage-container select[name="userType"]{
+    margin-left: 5px;
+    color: #000000;
+    border: none;
+    border-bottom: 1px solid #cccccc;
+    background: transparent;
+    background-color: #fff;
+    outline: none;
+    width: 100px;
+    height: 30px;
+    margin-bottom: 10px;
+    transition: all 0.5s ease;
+}
+
+.manage-container input[type="button"], .manage-container #update{
+    width: 100%;
+    border: 0;
+    border-radius: 30px;
+    margin-top: 10px;
+    padding: 16px 30px;
+    cursor: pointer;
+    color: #ff6699;
+    transition: all 0.3s linear;
+}
+
+.manage-container input[type="button"]:hover{
+    background-color: #ff6699;
+    color: #ffffff;
+}
+
+.manage-container #showAccount{
+    width: auto;
+    border: 0;
+    border-radius: 30px;
+    margin-top: 10px;
+    margin-left: 330;
+    padding: 16px 30px;
+    cursor: pointer;
+    color: #ff6699;
+    transition: all 0.3s linear;
+}
+
+.manage-container #showUser{
+    width: auto;
+    border: 0;
+    border-radius: 30px;
+    margin-top: 10px;
+    margin-left: 238;
+    padding: 16px 30px;
+    cursor: pointer;
+    color: #ff6699;
+    transition: all 0.3s linear;
+}
+
+.manage-container #showAccount:hover, .manage-container #showUser:hover, .manage-container #update:hover{
+    background-color: #ff6699;
+    color: #ffffff;
+}
+
+.manage-container #class{
+    padding: 15px;
+    color: #ff6699;
+    border: none;
+    background: #3a3a3a;
+    outline: none;
+    width: 250px;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+.manage-container a{
+    color: #ffffff;
+    transition: 0.5s;
+    text-decoration: none;
+}
+
+.manage-container a:hover{
+    color: #ff6699;
+}
+
+/*------------------------Class------------------------*/
+
+.class-main{
+    min-height: 180vh;
+    background-color: #cccccc;
+    background-size: cover;
+    background-position:center;
+    position:relative;
+}
+
+.class-container{
+    position:relative;
+    top: 100;
+    left: 0;
+    width: 950px;
+    height: auto;
+    margin: auto;
+    background-color: #4d4d4d;
+    border: 0;
+    border-radius: 15px;
+}
+
+.class-container .content{
+    padding: 20px;
+}
+
+.class-container .content h1{
+    font-size: 40px;
+    padding: 15px;
+    color: #ff6699;
+}
+
+.class-container .content h2{
+    padding: 15px;
+    margin-bottom: -20;
+    color: #ffffff;
+}
+
+.class-container .content h3{
+    padding: 15px;
+    margin-bottom: -20;
+    color: #ffffff;
+    width: 200px;
+    font-weight: 500;
+}
+
+.class-container #formClass, #addStudent{
+    display: none;
+}
+
+.class-container .content input[type="text"], .class-container .content input[type="password"]{
+    padding: 15px;
+    color: #cccccc;
+    border: none;
+    border-bottom: 1px solid #cccccc;
+    background: transparent;
+    outline: none;
+    width: 100%;
+    height: 30px;
+    margin-bottom: 10px;
+    transition: all 0.5s ease;
+}
+
+.class-container .content input[type="text"]:hover{
+    border-bottom: 1px solid #ff6699;
+}
+
+.class-container .content input[type="password"]:hover{
+    border-bottom: 1px solid #ff6699;
+}
+
+.class-container input[type="button"]{
+    width: 100%;
+    border: 0;
+    border-radius: 30px;
+    margin-top: 10px;
+    padding: 16px 30px;
+    cursor: pointer;
+    color: #ff6699;
+    transition: all 0.3s linear;
+}
+
+.class-container input[type="button"]:hover{
+    background-color: #ff6699;
+    color: #ffffff;
+}
+
+.class-container #archive-btn{
+    width: 200px;
+    border: 0;
+    border-radius: 30px;
+    float: right;
+    padding: 16px 30px;
+    cursor: pointer;
+    color: #ff6699;
+    transition: all 0.3s linear;
+}
+
+.class-container #archive-btn:hover{
+    background-color: #ff6699;
+    color: #ffffff;
+}
+
+/*------------------------Calendar------------------------*/
+
+.calendar-main{
+    min-height: 100vh;
+    background-color: #cccccc;
+    background-size: cover;
+    background-position:center;
+    position:relative;
+}
+
+.calendar-container{
+    position:relative;
+    top: 150px;
+    width: 1050px;
+    min-height: 650px;
+    margin: auto;
+    background-color: #4d4d4d;
+    border: 0;
+    border-radius: 15px;
+}
+
+.calendar-left{
+    width: 30%;
+    float: left;
+    background-color: #3a3a3a;
+    box-shadow: 1px 0px 0px #cccccc;
+    border-top-left-radius: 1em;
+    border-bottom-left-radius: 1em;
+    min-height: 650px;
+}
+
+.calendar-left-content{
+    margin: 10px 50px 20px;
+}
+
+.calendar-left h1{
+    font-size: 30px;
+    font-weight: 400;
+    color: #ffffff;
+}
+
+.calendar-left h1 .days{
+    color: #ff6699;
+    font-size: 100px;
+    font-weight: 400;
+    letter-spacing: 20px;
+    margin-bottom: -30px;
+}
+
+.calendar-left h3{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 400;
+    color: #ff77aa;
+}
+
+.calendar-events{
+    color: #cccccc;
+}
+
+.calendar-events li{
+    list-style-type: none;
+}
+
+.calendar-events p{
+    margin-bottom: 10px;
+}
+
+.calendar-btn{
+    background-color: #ffffff;
+    text-decoration: none;
+    display: block;
+    color: #4d4d4d;
+    padding: 8px 10px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.back-btn{
+    text-decoration: none;
+    display: block;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.calendar-btn i, .back-btn i{
+    margin: 0 5px;
+}
+
+.calendar-left a:hover{
+    color: #ff6699;
+}
+
+.calendar-right{
+    width: 70%;
+    float: right;
+}
+
+.calendar-right-content{
+    margin: 80px 50px 20px;
+}
+
+.calendar-right-content h2{
+    color: #FFFFFF;
+    font-size: 35px;
+}
+
+.calendar-right-content .calendar{
+    margin-top: 30px;
+}
+
+.calendar-right-content .calendar-row{
+    display: flex;
+    flex: 1 1 0;
+    color: #ffffff;
+    font-weight: 300;
+}
+
+.calendar-right-content .calendar-day{
+    width: 100%;
+    padding: .5rem .5rem;
+    min-height: 70px;
+    text-align: right;
+    border: 1px solid #cccccc;
+    margin: -1px 0 0 -1px;
+}
+
+.calendar-right-content .calendar-day.day-name {
+    min-height: 0;
+    border: none;
+}
+
+.calendar-day.weekend {
+    background: #3a3a3a;
+}
+
+.calendar-day .event{
+    height: 16px;
+    padding-top: 1px;
+    padding: 1px 8px 0 8px;
+    font-size: 10px;
+    font-weight: 400;
+    border-radius: 10px;
+    background-color: #ececec;
+    color: #ff6699;
+    display: inline-block;
+    margin-top: 3px;
+}
+
+.calendar-date{
+    cursor: pointer;
+}
+
+.calendar-day:hover, .calendar-day.special .calendar-date:hover{
+    color: #ff6699;
+}
+
+.calendar-day.inactive .calendar-date {
+    color: #999;
+    font-weight: 300;
+}
+
+.calendar-day.special .calendar-date {
+    color: #fa9dbc;
+    font-weight: 300;
+}
+
+.add-activity h3{
+    margin-top: 30px;
+    color: #ffffff;
+}
+
+.add-activity input[type="text"]{
+    color: #ffffff;
+    border: none;
+    border-bottom: 1px solid #cccccc;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    width: 100%;
+}
+
+.add-activity input[type=time], .add-activity input[type=time]{
+    padding: 15px;
+    color: #ffffff;
+    border: none;
+    border-bottom: 1px solid #cccccc;
+    background: transparent;
+    outline: none;
+    width: 100%;
+    height: 30px;
+    margin-bottom: 10px;
+    transition: all 0.5s ease;
+}
+
+.add-activity select[name="ampm"], .add-activity select[name="class"]{
+    color: #000000;
+    border: none;
+    border-bottom: 1px solid #cccccc;
+    background: transparent;
+    background-color: #fff;
+    outline: none;
+    width: 100px;
+    height: 30px;
+    margin-top: 10px;
+    transition: all 0.5s ease;
+}
+
+.add-activity input[type="button"]{
+    width: 100%;
+    border: 0;
+    border-radius: 30px;
+    margin-top: 35px;
+    padding: 16px 30px;
+    cursor: pointer;
+    color: #ff6699;
+    transition: all 0.3s linear;
+}
+
+.add-activity input[type="button"]:hover{
+    background-color: #ff6699;
+    color: #ffffff;
+}
+
+.imgcenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

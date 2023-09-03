@@ -1,0 +1,206 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Attendance Online</title>
+
+    <script src="https://kit.fontawesome.com/f37b347bb3.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+    <script type="text/javascript" language="javascript">
+        $(document).ready(function(){
+            $("#class").keyup(function(){
+			    $('#content-table tbody tr').hide().filter(":contains('"+$(this).val()+"')").show();
+		    });
+                $('#createAccount').hide();
+                $('#adminAccount').hide();
+                $('.ac-container').hide();
+                $('#showCreate').click(function(){
+                            $('#createAccount').show();
+                            $('#showCreate').hide();
+                  });
+                $('#showAccount').click(function(){
+                            $('#adminAccount').show();
+                            $('#showAccount').hide();
+                            $('#createAccount').hide();
+                            $('#userinfor').hide();
+                  });
+                $('#showUser').click(function(){
+                            $('#adminAccount').hide();
+                            $('#userinfor').show();
+                            $('#showAccount').show();
+                            $('#showCreate').show();
+                  });
+
+                $("#chage").click(function(){
+		        if (confirm('Want to chage the user account status to disable?')) {
+
+                } else {
+
+                }    
+		    });
+
+            $('#create').click(function(){
+                if (confirm('Make sure the data is entered correctly?')) {                                                     
+                    $('#content-table tbody').append('<tr><td>'+$('input[name="userID"]').val()+'</td>'+'<td>'+$('input[name="userName"]').val()+'</td>'+'<td>'+$('select[name="userType"]').val()+'</td>'+'<td>'+$('select[name="class"]').val()+'</td>'+'<td>'+'Enable'+'</td>'+'<td>'+'<input type = "button" id="chage" value=" ⇆ ">'+'</td></tr>');
+                } else {
+                           }
+		    });
+
+            $('input[type="text"]').attr('readonly', true);
+            $('input[type="password"]').attr('readonly', true);
+
+            $('#update').click(function(){
+                $('input[type="text"]').attr('readonly', false);
+                $('input[type="password"]').attr('readonly', false);
+            });
+        });
+   </script>
+
+   <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<hearder class="header">
+    <div class="container">
+        <div class="row justify-content-between align-items-center">
+            <div class="title">
+                <a href="admin.html">Attendance Online</a>
+            </div>
+
+            <nav class="nav">
+                <ul>
+                    <li><a href="account.html">Account</a></li>
+                    <li><a href="class.html">Class</a></li>
+                    <li><a href="search.html">Search</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<section class="manage-main">
+    <div class="manage-container">
+        <div class="align-items-left">
+            <div class="content">
+                <form id="userinfor">
+                    <h1>User Information<input type = "button" id="showAccount" value="Admin Account"></h1>
+                    <hr>
+                    <br>
+                    <input type="text" id="class" placeholder="Enter student's class, ID or name">
+                    <table id="content-table">
+                        <thead>
+                            <tr>
+                                <th>User ID</th>
+                                <th>User Name</th>
+                                <th>User Type</th>
+                                <th>Class</th>
+                                <th>User Status</th>
+                                <th></th>
+                                </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>001</td>
+                                <td>Chun Jai</td>
+                                <td>Student</td>
+                                <td>360A</td>
+                                <td>Enable</td>
+                                <td><input type = "button" id="chage" value=" ⇆ "></td>
+                            </tr>
+                            <tr>
+                                <td>002</td>
+                                <td>So Jai</td>
+                                <td>Student</td>
+                                <td>129B</td>
+                                <td>Enable</td>
+                                <td><input type = "button" id="chage" value=" ⇆ "></td>
+                            </tr>
+                            <tr>
+                                <td>003</td>
+                                <td>TungTung</td>
+                                <td>Student</td>
+                                <td>1o</td>
+                                <td>Student</td>
+                                <td><input type = "button" id="chage" value=" ⇆ "></td>
+                            </tr>
+                            <tr>
+                                <td>004</td>
+                                <td>TT</td>
+                                <td>Student</td>
+                                <td></td>
+                                <td>Disable</td>
+                                <td><input type = "button" id="chage" value=" ⇆ "></td>
+                            </tr>
+                            <tr>
+                                <td>005</td>
+                                <td>NBSL</td>
+                                <td>Teachers</td>
+                                <td>2d</td>
+                                <td>Disable</td>
+                                <td><input type = "button" id="chage" value=" ⇆ "></td>
+                            </tr>
+                            <tr>
+                                <td>006</td>
+                                <td>CHI JAI</td>
+                                <td>Teachers</td>
+                                <td></td>
+                                <td>Disable</td>
+                                <td><input type = "button" id="chage" value=" ⇆ "></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <input type = "button" id="showCreate" value="CreateAccount">
+                </form>
+
+                <form id="createAccount">
+                    <h1>Create Account</h1>
+                    <hr>
+                    <h2>User ID</h2>
+                    <input type="text" name="userID" required>
+                    <h2>User Name</h2>
+                    <input type="text" name="userName" required>
+                    <h2>Class</h2>
+                    <select name="class">
+    	                <option value="1A">1A</option>
+                        <option value="1B">1B</option>
+                        <option value="1C">1C</option>
+                        <option value="2A">2A</option>
+                        <option value="2B">2B</option>
+                        <option value="2C">2C</option>
+                    </select>
+                    <h2>User type</h2>
+                    <select name="userType">
+                        <option value="Student">Student</option>
+                        <option value="Teacher">Teacher</option>
+                        <option value="Admin">Admin</option>
+                    </select>
+                    <input type="button" id="create" value="Create Account">
+                </form>
+                
+                <form id="adminAccount">
+                    <h1>Personal Information<input type = "button" class="switch" id="showUser" value="User Information"></h1>
+                    <hr>
+                    <h2>ID</h2>
+                    <input type="text" name="" value="200112117">
+                    <h2>Password</h2>
+                    <input type="Password" name="" value="JJJJJJJJJJ">
+                    <h2>First Name</h2>
+                    <input type="text" name="" value="Chung">
+                    <h2>Last Name</h2>
+                    <input type="text" name="" value="Hiu Chun">
+                    <h2>Email</h2>
+                    <input type="text" name="" value="200112117@stu.vtc.edu.hk">
+                    <h2>Account Type</h2>
+                    <input type="text" value="Admin">
+                    <input type="button" id="update" value="Update Account"> 
+                    <p align="right"><a href="../login.html"><i class="fas fa-sign-out-alt"></i>Logout</a></p>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    
+</body>
+</html>

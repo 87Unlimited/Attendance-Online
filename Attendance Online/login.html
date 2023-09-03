@@ -1,0 +1,113 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Attendance Online</title>
+
+   <script type="text/javascript" 
+        src="jslib/jquery-1.11.1.js">
+   </script>
+   <script src="https://kit.fontawesome.com/f37b347bb3.js" crossorigin="anonymous"></script>
+   <script type="text/javascript" >
+
+   $(document).ready(function() {
+        $('#teacher').hide();
+        $('#admin').hide();
+
+		$("submit").click(function(){
+			var uname = $("input").val();
+			alert("You have logged in successfully, " + uname);
+		});
+		$("#button2").click(function(){
+			$("#divid").text("");
+			$("input").val("HEEEEE");
+		});
+
+        $(".content #showTeacher").click(function(){
+			$('#teacher').show();
+            $('#student').hide();
+            $('#admin').hide();
+		});
+
+        $(".content #showAdmin").click(function(){
+			$('#teacher').hide();
+            $('#student').hide();
+            $('#admin').show();
+		});
+
+        $(".content #showStudent").click(function(){
+			$('#teacher').hide();
+            $('#student').show();
+            $('#admin').hide();
+		});
+   });
+
+   </script>
+
+   <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<hearder class="header">
+    <div class="container">
+        <div class="row justify-content-between align-items-center">
+            <div class="title">
+                <a href="login.html">Attendance Online</a>
+            </div>
+
+            <nav class="nav">
+                <ul>
+                    <li><a href="#"> </a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<section class="main">
+    <div class="login-container">
+        <div class="align-items-center">
+            <div class="content" id="student">
+                <h1>Login</h1>
+                <h2>Student Account</h2>
+                <form action="student/student.html">
+                    <p class="title">User ID</p>
+                    <input type="text" name="" placeholder="Enter Your ID">
+                    <p class="title">Password</p>
+                    <input type="Password" name="" placeholder="Enter Your Password">
+                    <input type="submit" name="" value="login">
+                    <p id="showTeacher" align="right">Login As Teacher</p>
+                    <p id="showAdmin" align="right">Login As Admin</p>
+                </form>
+            </div>
+            <div class="content" id="teacher">
+                <h1>Login</h1>
+                <h2>Teacher Account</h2>
+                <form action="teacher/teacher.html">
+                    <p class="title">User ID</p>
+                    <input type="text" name="" placeholder="Enter Your ID">
+                    <p class="title">Password</p>
+                    <input type="Password" name="" placeholder="Enter Your Password">
+                    <input type="submit" name="" value="login">
+                    <p id="showAdmin" class="admin1" align="right">Login As Admin</p>
+                    <p id="showStudent" align="right">Login As Student</p>
+                </form>
+            </div>
+            <div class="content" id="admin">
+                <h1>Login</h1>
+                <h2>Admin Account</h2>
+                <form action="admin/admin.html">
+                    <p class="title">User ID</p>
+                    <input type="text" name="" placeholder="Enter Your ID">
+                    <p class="title">Password</p>
+                    <input type="Password" name="" placeholder="Enter Your Password">
+                    <input type="submit" name="" value="login">
+                    <p id="showTeacher" align="right">Login As Teacher</p>
+                    <p id="showStudent" align="right">Login As Student</p>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>
